@@ -1,0 +1,44 @@
+.header,
+.main_part,
+.post,
+.menu,
+.footer {
+    display: flex;
+    font-weight: 700;
+}
+
+.header,
+.footer {
+    height: 100px;
+    border: black solid 1px;
+    background-color: rgb(135, 192, 102);
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.menu {
+    height: 410px;
+    width: 30%;
+    border: black solid 1px;
+    background-color: rgb(139, 82, 130);
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    width: 70%;
+    margin-left: 20px;
+}
+
+.post {
+    height: 200px;
+    border: black solid 1px;
+    background-color: rgba(66, 153, 168, 0.342);
+    justify-content: center;
+    align-items: center;
+}
+
+.post:first-child {
+    margin-bottom: 10px;
+}
