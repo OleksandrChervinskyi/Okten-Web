@@ -1,0 +1,109 @@
+/* Лекція від 19.01 */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header,
+.main,
+.bar,
+.hero,
+.sidebar,
+.maincontent,
+.extracontent,
+.relatedcontent,
+.relatedimg,
+.relatedposts,
+.footer {
+    display: flex;
+}
+
+h1,
+h2,
+p {
+    color: cornsilk;
+}
+
+.p20 {
+    padding-top: 20px;
+}
+
+.header {
+    height: 100px;
+    background-color: cadetblue;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.main {
+    height: 500px;
+    margin-bottom: 5px;
+}
+
+.bar {
+    width: 30%;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.hero {
+    background-color: rgb(170, 90, 170);
+    margin-bottom: 5px;
+    height: 40%;
+    justify-content: center;
+}
+
+.sidebar {
+    background-color: rgb(33, 92, 36);
+    height: 60%;
+    justify-content: center;
+}
+
+.content {
+    width: 70%;
+}
+
+.maincontent {
+    background-color: rgb(124, 97, 9);
+    margin-bottom: 5px;
+    height: 70%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maincontent_title {
+    margin-bottom: 5px;
+}
+
+.extracontent {
+    background-color: grey;
+    height: 29%;
+    justify-content: center;
+}
+
+.relatedcontent {
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.relatedimg {
+    width: 80%;
+    background-color: rgb(44, 184, 67);
+    margin-right: 5px;
+    justify-content: center;
+}
+
+.relatedposts {
+    width: 20%;
+    background-color: rgb(150, 35, 140);
+    justify-content: center;
+}
+
+.footer {
+    height: 100px;
+    background-color: rgb(184, 143, 55);
+    justify-content: center;
+    align-items: center;
+}
