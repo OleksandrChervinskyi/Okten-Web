@@ -1,0 +1,49 @@
+/* Лекція від 21.01 */
+
+.header {
+    padding: 15px 0;
+    background-color: azure;
+    ;
+}
+
+.logo_img img {
+    max-height: 60px;
+}
+
+.icons {
+    color: thistle;
+    font-size: 23px;
+}
+
+.offer-section {
+    background-color: rgb(28, 49, 87);
+    padding: 20px 0 0;
+}
+
+.offer {
+    color: thistle;
+    flex-direction: column;
+}
+
+.offer_title {}
+
+.offer_text {
+    max-width: 480px;
+    text-align: center;
+}
+
+.offer_button {
+    color: rgb(184, 115, 184);
+    background-color: thistle;
+    border: none;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.card {
+    padding: 60px;
+    background-color: thistle;
+    position: relative;
+    top: 70px;
+    border-radius: 10px;
+}
