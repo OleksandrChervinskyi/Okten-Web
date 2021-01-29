@@ -10,7 +10,7 @@
     max-height: 60px;
 }
 
-.icons {
+.icons a {
     color: thistle;
     font-size: 23px;
 }
@@ -46,4 +46,112 @@
     position: relative;
     top: 70px;
     border-radius: 10px;
+}
+
+.main-section {
+    padding: 100px 0 20px;
+}
+
+.main-title {
+    margin-bottom: 30px;
+}
+
+.main-cards {}
+
+.main-card {}
+
+.main-card_img {
+    padding: 80px;
+    background-color: thistle;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.main-card_text {
+    margin-bottom: 20px;
+}
+
+.central-content {}
+
+.central-card {}
+
+.central-card_img {
+    padding: 100px;
+    background-color: thistle;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.central-card_title {
+    margin-bottom: 15px;
+}
+
+.central-card_text {}
+
+.central-card_discription {
+    padding-left: 15px;
+}
+
+.carusel-block {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.carusel-pic {
+    padding: 50px;
+    background-color: thistle;
+    border-radius: 10px;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 25px solid #000300;
+    border-bottom: 25px solid transparent;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 25px solid #000300;
+    border-bottom: 25px solid transparent;
+    justify-content: flex-end;
+}
+
+.info {}
+
+.info_img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: thistle;
+}
+
+.info_content {
+    margin-left: 20px;
+}
+
+.info_title {}
+
+.footer {
+    background-color: rgb(28, 49, 87);
+    padding: 30px 0;
+}
+
+.icons {
+    width: 125px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+.footer-text {
+    margin: 10px 0 0 0;
+    color: thistle;
 }
