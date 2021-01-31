@@ -1,0 +1,92 @@
+/* Sp */
+
+body {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.0em;
+}
+
+div,
+a,
+ul,
+li {
+    list-style: none;
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+}
+
+a,
+button,
+.fab {
+    text-decoration: none;
+    transition: 0.5s all ease;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+:focus,
+:active,
+button:focus,
+button:active {
+    outline: none;
+}
+
+
+/* Header */
+
+.header {
+    padding: 24px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.navigation {}
+
+.nav li {
+    /* margin-right: 20px; */
+    color: #000;
+    opacity: 70%;
+    margin-right: 35px;
+}
+
+.nav li:hover {
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.icons {}
+
+.icons a {
+    opacity: 50%;
+    margin-left: 10px;
+}
+
+.icons a:hover {
+    color: #30ABAE;
+}
+
+
+/* 0-576px xs mobil*/
+
+@media screen and (max-width: 576px) {
+    .header {
+        height: 83px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    .nav {
+        display: none;
+    }
+}
