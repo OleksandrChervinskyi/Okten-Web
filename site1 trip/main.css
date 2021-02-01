@@ -13,6 +13,9 @@ ul,
 li {
     list-style: none;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s all ease;
 }
 
 a {
@@ -60,6 +63,10 @@ h2 {
 
 h3 {
     font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
 }
 
 
@@ -122,13 +129,12 @@ h3 {
 
 .places-section {
     padding-top: 89px;
+    margin-bottom: 60px;
 }
 
 .places-title {
-    margin-bottom: 35px;
+    margin-bottom: 39px;
 }
-
-.cards {}
 
 .card {
     border: none;
@@ -153,13 +159,110 @@ h3 {
     padding-left: 23px;
     max-width: 295px;
     opacity: 70%;
-    /* position: relative; */
+    border-left: 2px solid rgba(237, 134, 81, 1);
 }
 
-.card_text:before {
-    content: '';
-    border-left: 2px solid #ED8651;
-    /* position: absolute; */
+
+/* ------Footer--------- */
+
+.footer {
+    padding: 45px 0;
+    background-color: rgba(22, 89, 90, 1);
+}
+
+
+/* BLOGE page */
+
+.blog-section {
+    position: relative;
+    z-index: 100;
+}
+
+.back-light {
+    width: 656px;
+    height: 693px;
+    background-color: rgba(242, 245, 241, 1);
+    position: absolute;
+    top: 89px;
+    z-index: -1;
+}
+
+.blog-title {
+    margin: 34px 0 56px;
+}
+
+.blog-title {}
+
+.categories {
+    color: rgba(65, 65, 65, 1);
+}
+
+.categories_title {
+    margin-bottom: 16px;
+    padding-left: 19px;
+}
+
+.categories li {
+    border: 1px solid rgba(228, 228, 228, 1);
+    border-radius: 20px;
+    padding-left: 19px;
+    width: 210px;
+    margin-bottom: 11px;
+    opacity: 0.8;
+}
+
+.categories li:hover {
+    border-color: rgba(99, 192, 194, 1);
+}
+
+.categories_li_black {
+    background-color: rgba(228, 228, 228, 1);
+}
+
+.categories_button {
+    border: none;
+    color: rgba(48, 171, 174, 1);
+    background-color: rgba(242, 245, 241, 1);
+    padding-left: 19px;
+}
+
+.categories_button:hover {
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.blog-card {
+    flex-direction: column;
+}
+
+.blog-card_img {
+    max-width: 295px;
+    margin-bottom: 9px;
+}
+
+.blog-card_title {
+    margin-bottom: 5px;
+}
+
+.blog-card_details {
+    font-size: 12px;
+    color: rgba(192, 192, 192, 1);
+    margin-bottom: 30px;
+}
+
+.blog-card_details span {
+    margin: 0 12px 0 14px;
+}
+
+.blog-card_text {
+    padding-top: 29px;
+    border-top: 1px solid rgba(237, 134, 81, 0.6);
+    max-width: 295px;
+    line-height: 24px;
+}
+
+.blog-card_button {
+    border: none;
+    background-color: none;
 }
 
 
