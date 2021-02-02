@@ -26,7 +26,6 @@ a,
 button,
 .fab {
     text-decoration: none;
-    transition: 0.5s all ease;
 }
 
 a:hover {
@@ -176,11 +175,12 @@ h4 {
 .blog-section {
     position: relative;
     z-index: 100;
+    padding-bottom: 79px;
 }
 
 .back-light {
     width: 656px;
-    height: 693px;
+    height: 670px;
     background-color: rgba(242, 245, 241, 1);
     position: absolute;
     top: 89px;
@@ -195,6 +195,7 @@ h4 {
 
 .categories {
     color: rgba(65, 65, 65, 1);
+    margin-bottom: 145px;
 }
 
 .categories_title {
@@ -258,11 +259,61 @@ h4 {
     border-top: 1px solid rgba(237, 134, 81, 0.6);
     max-width: 295px;
     line-height: 24px;
+    margin-bottom: 1px;
+    flex-direction: column;
 }
 
 .blog-card_button {
     border: none;
-    background-color: none;
+    background-color: transparent;
+    color: rgba(48, 171, 174, 1);
+    margin-left: auto;
+}
+
+.blog-card_button:hover {
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.blog-card_button span {
+    font-size: 33px;
+}
+
+
+/* ---------Pages-------------- */
+
+.pages-section {
+    padding: 47px 0 43px;
+    background-color: rgba(242, 245, 241, 1);
+}
+
+.page-item,
+.disabled,
+.page-link {
+    background-color: transparent;
+    border: none;
+    color: rgba(170, 170, 170, 1);
+}
+
+.page-item.disabled .page-link,
+.page-link .active {
+    background-color: transparent;
+    color: rgba(170, 170, 170, 1)
+}
+
+.page-item.active .page-link {
+    background-color: transparent;
+    color: rgba(170, 170, 170, 1);
+}
+
+.page-link:hover {
+    background-color: transparent;
+    color: rgba(48, 171, 174, 1);
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.fa-arrow-circle-right,
+.fa-arrow-circle-left {
+    margin: 0 50px;
 }
 
 
