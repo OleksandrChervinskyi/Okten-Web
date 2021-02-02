@@ -172,7 +172,8 @@ h4 {
 
 /* BLOGE page */
 
-.blog-section {
+.blog-section,
+.form-section {
     position: relative;
     z-index: 100;
     padding-bottom: 79px;
@@ -187,7 +188,18 @@ h4 {
     z-index: -1;
 }
 
-.blog-title {
+.back-light_blog-main {
+    width: 918px;
+    height: 728px;
+}
+
+.back-light_contacts {
+    width: 914px;
+    height: 500px;
+}
+
+.blog-title,
+.form-title {
     margin: 34px 0 56px;
 }
 
@@ -266,8 +278,11 @@ h4 {
 .blog-card_button {
     border: none;
     background-color: transparent;
-    color: rgba(48, 171, 174, 1);
     margin-left: auto;
+}
+
+.blog-card_button a {
+    color: rgba(48, 171, 174, 1);
 }
 
 .blog-card_button:hover {
@@ -314,6 +329,78 @@ h4 {
 .fa-arrow-circle-right,
 .fa-arrow-circle-left {
     margin: 0 50px;
+}
+
+
+/* -----BLOG-MAINE Page----- */
+
+.blog-title p {
+    color: rgba(196, 196, 196, 1);
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.blog-title span {
+    margin: 0 35px 0 63px;
+}
+
+.blog-main-text {
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 382px;
+}
+
+.blog-main-bg-img {
+    width: 711px;
+    height: 464px;
+}
+
+.img-wrap {
+    background: url(img/photo_bg_blog-main.png) center right no-repeat;
+}
+
+
+/* -------CONTACTS Page-------- */
+
+.form-title {
+    margin-bottom: 60px;
+}
+
+.form {
+    flex-direction: column;
+    align-items: center;
+}
+
+.form input {
+    width: 530px;
+    height: 64px;
+    padding: 21px;
+    border: 1px solid rgba(196, 196, 196, 1);
+    border-radius: 1px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    background-color: transparent;
+    margin-bottom: 27px;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(196, 196, 196, 1);
+}
+
+::-moz-placeholder {
+    color: rgba(196, 196, 196, 1);
+}
+
+.form_button {
+    width: 295px;
+    padding: 15px 0;
+    background-color: rgba(48, 171, 174, 1);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
 }
 
 
