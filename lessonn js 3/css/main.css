@@ -1,0 +1,647 @@
+/*--------Fonts---------*/
+@font-face {
+  font-family: "Natasha";
+  src: url("../fonts/Natasha.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/Natasha.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Natasha.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/Natasha.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/Natasha.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/Natasha.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/Natasha.woff2") format("woff2"); /* Modern Browsers */
+}
+
+@font-face {
+  font-family: "MuseoSansCyrl-100";
+  src: url("../fonts/MuseoSansCyrl.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MuseoSansCyrl.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/MuseoSansCyrl.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/MuseoSansCyrl.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/MuseoSansCyrl.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/MuseoSansCyrl.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/MuseoSansCyrl.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSansCyrl-300";
+  src: url("../fonts/MuseoSansCyrl0.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MuseoSansCyrl0.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/MuseoSansCyrl0.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/MuseoSansCyrl0.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/MuseoSansCyrl0.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/MuseoSansCyrl0.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/MuseoSansCyrl0.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuseoSansCyrl-900";
+  src: url("../fonts/MuseoSansCyrl3.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/MuseoSansCyrl3.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/MuseoSansCyrl3.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/MuseoSansCyrl3.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/MuseoSansCyrl3.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/MuseoSansCyrl3.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/MuseoSansCyrl3.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*---------Sp---------*/
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'MuseoSansCyrl-300', sans-serif;
+	font-size: 15px;
+	letter-spacing: 0.02em;
+	color: #22241b;
+}
+
+div, p, form, input, textarea, a, span, button, li {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	font-family: "Natasha", sans-serif;
+	letter-spacing: 0.12em;
+}
+
+li, ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h2 {
+	font-size: 37px;
+}
+
+h3 {
+	font-size: 22px;
+	opacity: 0.6;
+}
+
+p {
+	margin: 0;
+	line-height: 1.5em;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	transition: all 0.5s ease;
+}
+
+i, span{
+	display: inline-block;
+}
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.container {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.d-flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.justify-sb {
+	justify-content: space-between;
+}
+
+.aling-ic {
+	align-items: center;
+}
+
+/*---------Header-----------*/
+
+.header { 
+	background: #525239 url(../img/bg.jpg) no-repeat top center / cover;
+	color: #fff;
+	padding: 50px 0 100px;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.navigation {
+	letter-spacing: 0.12em;
+}
+
+.navigation__logo {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 17px;
+	font-family: "MuseoSansCyrl-100", sans-serif;	
+}
+
+.navigation__logo span {
+	font-family: "MuseoSansCyrl-900", sans-serif;
+}
+
+.navigation__menu {
+	text-transform: uppercase;
+	font-family: "MuseoSansCyrl-900", sans-serif;	
+}
+
+.navigation__item:not(:last-child) {
+	margin-right: 45px;
+}
+
+.navigation__links {
+	border-bottom: 2px solid transparent;
+}
+
+.navigation__links:hover {
+	border-bottom: 2px solid #dad2d2;
+}
+
+.header a {
+	color: #fff;
+}
+
+.navigation__email {
+	font-size: 13px;
+	padding-bottom: 2px; 
+	border-bottom: 1px solid #676965;
+}
+
+.navigation__email:hover {
+	border-bottom: 1px solid transparent;
+}
+
+.offer {
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.12em;
+	margin: 290px 0 230px;
+}
+
+.offer__title {
+	font-size: 49px;
+	font-family: "Natasha";
+}
+
+.offer__text {
+	font-size: 29px;
+	font-family: "MuseoSansCyrl-100", sans-serif;
+	margin-top: 20px;
+}
+
+.scroll-down {
+	font-size: 18px;
+	width: 39px;
+	height: 39px; 
+	line-height: 37px;
+	margin: 0 auto;
+	border: 1px solid #9fa19b;
+	border-radius: 50%;
+	text-align: center;
+	display: block;
+}
+
+.scroll-down:hover {
+	background-color: #fff;
+	opacity: 0.6;
+	border-color: #fff;
+	color: #000;
+}
+
+/*-----------About---------------*/
+
+.about-section {
+	padding: 80px 0 50px;
+}
+
+.about {
+	margin-top: 70px;
+}
+
+.bg {
+	max-width: 440px;
+}
+
+.bg__title {
+	margin-bottom: 30px;
+}
+
+.bg__content {
+	margin-top: 40px;
+}
+
+.bg__text {
+	line-height: 1.8em;
+}
+
+.bg__text:not(:last-child) {
+	margin-bottom: 28px;
+}
+
+.info {
+	max-width: 460px;
+	width: 100%;
+}
+
+.merit {
+
+}
+
+.merit__content {
+	margin-top: 65px;
+	justify-content: space-around;
+}
+
+.merit__items {
+	max-width: 120px;
+	width: 100%;
+	text-align: center;
+	font-family: "MuseoSansCyrl-100", sans-serif;
+}
+
+.merit__numbers {
+	font-size: 20px;
+	max-width: 70px;
+	width: 100%;
+	height: 70px;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #3e6534;
+	position: relative;
+	transform: rotate(45deg);
+}
+
+.merit__numbers:after {
+	content: '';
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	border:1px solid #cddbc3;
+}
+
+.merit__numbers span {
+	transform: rotate(-45deg);
+}
+
+.merit__text {
+	margin-top: 38px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.comun {
+	margin-top: 63px;
+}
+
+.comun__content {
+	margin-top: 30px;
+}
+
+.comun__links {
+ 	max-width: 170px;
+ 	width: 100%; 
+}
+
+.comun__link:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.comun__link a {
+	font-size: 14px;
+	color: #204d15;
+	letter-spacing: 0.12em;
+	border-bottom:1px solid #becbbb;
+	padding-bottom: 3px;
+}
+
+.comun__link a:hover {
+	border-bottom:1px solid transparent;
+}
+
+.comun__write {
+	max-width: 250px;
+	width: 100%; 
+}
+
+#reply-title, .logged-in-as, .edit-link, .comment-notes, .comment-form-url {
+	display: none;
+}
+
+.comment-form {
+	margin: 0;
+}
+
+.comment-form-comment, .comment-form-author, .comment-form-email {
+	font-family: "MuseoSansCyrl-100";
+    font-size: 12px;
+    color: #22241b;
+    text-transform: uppercase;
+    margin: 7px 0;
+}
+
+#comment {
+	max-width: 200px;
+	max-height: 50px;
+}
+
+#author, #email {
+	max-width: 140px;
+	max-height: 50px;
+}
+
+#author {
+	margin-left: 8px;
+}
+
+#submit {
+	font-family: "MuseoSansCyrl-300";
+	font-size: 13px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    opacity: 0.8;
+    padding: 0 0 3px 0;
+}
+
+#submit:hover {
+	border-bottom: 1px solid #becbbb;
+	transition: all 0.5s ease;
+}
+
+.comment-reply-link, .comment-metadata a, .comment-body {
+	font-family: "MuseoSansCyrl-100";
+	font-size: 13px;
+	color: #22241b
+}
+
+.comment-content {
+	margin: 5px 0;
+	font-family: "MuseoSansCyrl-300";
+	font-size: 14px;
+}
+
+.comment-list {
+	padding-left: 5px;
+}
+
+.children {
+	margin-top: 15px;
+}
+/*----------Skills------------*/
+
+.skills-section {
+	padding: 40px 0;
+}
+
+.skills {
+	margin-top: 55px;
+}
+
+.skills__item {
+	max-width: 220px;
+    width: 100%;
+}
+
+.skills__percent {
+	font-size: 13px;
+	font-family: "MuseoSansCyrl-100", sans-serif;
+	width: 60px;
+	line-height: 57px;
+	border: 1px solid #57794f;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+}
+
+.skills__percent:after {
+	content: '';
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	border:1px solid #b7bbb6;
+	border-radius: 50%;
+	left: 4px;
+    top: 4px;
+}
+
+.skills__text {
+	font-family: "MuseoSansCyrl-900", sans-serif;
+	text-transform: uppercase;
+	opacity: 0.89;
+	margin-left: 30px;
+}
+
+/*---------Works---------*/
+
+.works-section {
+	padding: 40px 0;
+}
+
+.works-title {
+	margin-bottom: 50px;
+}
+
+.works__img {
+	max-width: 300px;
+	max-height: 300px;
+	max-width: 100%;
+	display: block;
+}
+
+.works__item-wrap {
+	position: relative;
+}
+
+.works__overlay {
+	top:0;
+	left:0;
+	background: rgba(0, 0, 0, 0.56);
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	position: absolute;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.works__overlay:hover {
+	opacity: 1;
+	transition: all 0.5s ease;
+}
+
+.works__text {
+	font-size: 13px;
+	font-family: "MuseoSansCyrl-300", sans-serif;
+	max-width: 63px;
+	border-bottom: 1px solid #fff;
+	margin-top: 10px;
+	color: #fff;
+}
+
+.works__text:hover {
+	border-bottom: 1px solid transparent;
+}
+
+.rl-gallery-container {
+	padding-bottom: 10px;
+    border-bottom: 1px solid rgba(134, 131, 131, 0.6);
+}
+
+/*--------------Footer------------------*/
+
+.footer {
+	padding: 0 0 80px;
+}
+
+.credits {
+	font-family: "MuseoSansCyrl-300", sans-serif;
+	font-size: 12px;
+	color: #22241b;
+	text-transform: uppercase;
+	opacity: 0.80;
+	letter-spacing: 0.14em;
+}
+
+/*--------Media Queries------------*/
+
+/* 992-1200px */
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 920px;
+	}
+}
+
+ /* 768-992px */
+@media screen and (max-width: 992px) {
+	.container {
+		width: 700px;
+	}
+	h1 {
+		line-height: 1.5em;
+	}
+	h1, h2, h3, .credits {
+		text-align: center;
+	}
+	.navigation__menu {
+		display: none;
+	}
+	.navigation {
+		flex-direction: column;
+	}
+	.navigation__logo {
+		margin-bottom: 20px;
+	}
+	.offer {
+		margin: 180px 0;
+	}
+	.about {
+		flex-direction: column;
+	}
+	.bg , .info {
+		max-width: 100%;
+	}
+	.info {
+		margin-top: 30px;
+	}
+	.bg__title {
+		margin-bottom: 20px;
+	}
+	.comun__content {
+		justify-content: space-around;
+	}
+	.skills {
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.skills__item {
+		margin-bottom: 20px;
+		max-width: 235px;
+	}
+	.works__item-wrap {
+		max-width: 32%;
+	}
+	.footer {
+		padding: 50px 0 70px;
+	}
+}
+ /* 576-768px */
+@media screen and (max-width: 768px) {
+	.container {
+		width: 520px;
+	}
+	.offer {
+		margin: 120px 0;
+	}
+	.offer__title {
+		font-size: 38px;
+	}
+	.offer__text {
+		font-size: 23px;
+	}
+	h2 {
+		font-size: 29px;
+	}
+	h3 {
+		font-size: 19px;
+	}
+	.about {
+		margin-top: 25px;
+	}
+	.works {
+		flex-direction: column;
+		align-items: center;
+	}
+	.works__item-wrap {
+		max-width: 70%;
+	}
+	.works__item-wrap:not(:last-child) {
+		margin: 0 0 25px;
+	}
+}
+
+/* 320-576px */
+@media screen and (max-width: 576px) {
+	.container {
+		width: 90%;
+	}
+	.merit__content, .comun__content, .skills, .skills__item {
+		flex-direction: column;
+		align-items: center;
+	}
+	.merit__items:not(:last-child) {
+		margin-bottom: 28px;
+	}
+	.comun__write {
+		margin: 30px 0;
+	}
+	.comun__content {
+		text-align: center;
+	}
+	.skills__text {
+		margin: 10px 0;
+	}
+	.skills__item {
+		margin-right: 0;
+		flex-basis: auto;
+	}
+	.works__item-wrap {
+		max-width: 90%;
+	}
+}
