@@ -294,9 +294,18 @@ function createBlocksWithRulesInDOM(arr) {
 // Операцией возведения в степень пользоваться нельзя!
 
 function getExactPower(N) {
-
-    // ?
+    let result = Math.sqrt(N);
+    if (Number.isInteger(result)) {
+        if (result !== 2) {
+            getExactPower(result);
+        } else {
+            console.log('Yes');
+        }
+    } else {
+        console.log('No');
+    }
 }
+// getExactPower(256);
 
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
@@ -319,4 +328,4 @@ let arr = [1, 3, ['Hello', 'Wordd', [9, 6, 1]],
 ];
 
 let result = arr.flat(Infinity);
-console.log(result);
+// console.log(result);
