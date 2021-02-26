@@ -154,20 +154,67 @@ function getNullEnd(arr) {
 // Створити функцію яка :
 // - Додає в боді блок з текстом "Hello owu"
 // - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+function addBlock(type = 'div', text = 'No text') {
+    let p = document.createElement(type);
+    p.innerText = text;
+    document.body.appendChild(p);
+}
+// addBlock('h1', 'helloo');
+
+
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 // Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
-// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
-// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 // Для кожної властивості створити всередені блока автомоблія свій блок
+function addCars(array, elementId) {
+    // find id
+    let wrap = document.getElementById(elementId);
+    for (const i of array) {
+        // create div
+        let div = document.createElement('div');
+        div.classList = 'elements_of_array';
+        if (typeof(i) == 'object') {
+            // If is object in aray create ul
+            let ul = document.createElement('ul');
+            ul.classList = 'object_in_array';
+            for (const key in i) {
+                // create li for each elements of object
+                let li = document.createElement('li');
+                li.classList = 'info_about_part_of_element';
+                li.innerText = `${key} - ${i[key]}`;
+                ul.appendChild(li)
+            }
+            div.appendChild(ul)
+        } else {
+            div.innerText = i;
+        }
+        wrap.appendChild(div)
+    }
+}
+// addCars(a, 'cars');
+
 
 // (на основі минулого ДЗ)
-// **- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id",
-// та повертає масив цих з'єднаних об'єктів.
+// **- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id", та повертає масив цих з'єднаних об'єктів.
 // Приклад масивів:
-//             let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
-//             let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
-// Частковий приклад реультату:
+let usersWithId = [{ id: 1, name: 'vasya', age: 31, status: false }, { id: 2, name: 'petya', age: 30, status: true }, { id: 3, name: 'kolya', age: 29, status: true }, { id: 4, name: 'olya', age: 28, status: false }, ];
+let citiesWithId = [{ user_id: 3, country: 'USA', city: 'Portland' }, { user_id: 1, country: 'Ukraine', city: 'Ternopil' }, { user_id: 2, country: 'Poland', city: 'Krakow' }, { user_id: 4, country: 'USA', city: 'Miami' }, ];
 
+function uniteTwoArray(userArr, cityArr) {
+    // create userArr clone in order to don't change beginning array
+    let userArrClone = JSON.parse(JSON.stringify(userArr));
+    let finArr = []
+    for (const user of userArrClone) {
+        for (const city of cityArr) {
+            if (user.id === city.user_id) {
+                user.address = city;
+                finArr.push(user)
+            }
+        }
+    }
+    console.log(userArr);
+    console.log(finArr);
+}
+// uniteTwoArray(usersWithId, citiesWithId);
 
 
 // ***- беремо завдання з правилами з укроку №3 :
@@ -176,42 +223,68 @@ function getNullEnd(arr) {
 // При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
 // Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
 
-// 			let rules = [
-// 				{
-// 					title: 'Первое правило Бойцовского клуба.',
-// 					body: 'Никому не рассказывать о Бойцовском клубе.'
-// 				},
-// 				{
-// 					title: 'Второе правило Бойцовского клуба.',
-// 					body: 'Никогда никому не рассказывать о Бойцовском клубе.'
-// 				},
-// 				{
-// 					title: 'Третье правило Бойцовского клуба.',
-// 					body: 'В схватке участвуют только двое.'
-// 				},
-// 				{
-// 					title: 'Четвертое правило Бойцовского клуба.',
-// 					body: 'Не более одного поединка за один раз.'
-// 				},
-// 				{
-// 					title: 'Пятое правило Бойцовского клуба.',
-// 					body: 'Бойцы сражаются без обуви и голые по пояс.'
-// 				},
-// 				{
-// 					title: 'Шестое правило Бойцовского клуба.',
-// 					body: 'Поединок продолжается столько, сколько потребуется.'
-// 				},
-// 				{
-// 					title: 'Седьмое правило Бойцовского клуба.',
-// 					body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
-// 				},
-// 				{
-// 					title: 'Восьмое и последнее правило Бойцовского клуба.',
-// 					body: 'Новичок обязан принять бой.'
-// 				},
+let rules = [{
+        title: 'Первое правило Бойцовского клуба.',
+        body: 'Никому не рассказывать о Бойцовском клубе.'
+    },
+    {
+        title: 'Второе правило Бойцовского клуба.',
+        body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+    },
+    {
+        title: 'Третье правило Бойцовского клуба.',
+        body: 'В схватке участвуют только двое.'
+    },
+    {
+        title: 'Четвертое правило Бойцовского клуба.',
+        body: 'Не более одного поединка за один раз.'
+    },
+    {
+        title: 'Пятое правило Бойцовского клуба.',
+        body: 'Бойцы сражаются без обуви и голые по пояс.'
+    },
+    {
+        title: 'Шестое правило Бойцовского клуба.',
+        body: 'Поединок продолжается столько, сколько потребуется.'
+    },
+    {
+        title: 'Седьмое правило Бойцовского клуба.',
+        body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+    },
+    {
+        title: 'Восьмое и последнее правило Бойцовского клуба.',
+        body: 'Новичок обязан принять бой.'
+    },
 
-// 			];
-// "
+];
+
+function createBlocksWithRulesInDOM(arr) {
+    let wrapHW = document.createElement('div');
+    wrapHW.className = 'wrap-hw';
+
+    for (const i of arr) {
+        // create wrap
+        let rule = document.createElement('div');
+        rule.className = 'rule';
+        // create title
+        let title = document.createElement('h3');
+        title.className = 'rule_title';
+        title.innerText = i.title;
+        // create text
+        let text = document.createElement('p');
+        text.className = 'rule_text';
+        text.innerText = i.body;
+
+        // add all element to each other
+        rule.appendChild(title);
+        rule.appendChild(text);
+        wrapHW.appendChild(rule);
+    }
+
+    document.body.appendChild(wrapHW);
+}
+// createBlocksWithRulesInDOM(rules);
+
 
 // ===========додаткове від віктора========
 // 1) Точная степень двойки.
@@ -220,10 +293,30 @@ function getNullEnd(arr) {
 // или слово NO в противном случае.
 // Операцией возведения в степень пользоваться нельзя!
 
+function getExactPower(N) {
+
+    // ?
+}
+
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
+function deepCopy(obj) {
+    for (const key in obj) {
+        if (typeof(obj[key]) === 'object') {
+            deepCopy(obj[key]);
+        } else {
+            console.log(key, obj[key]);
+        }
+    }
+}
+// deepCopy({ name: 'Alex', age: 25, wife: { name: 'Tanya', age: 24, sun: { nameSun: 'Svetozar', hobby: 'violonchel' } } });
 
 // 3) Flat
 // Вирівняти багаторівневий масив в однорівневий
 // [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
-// ===========додаткове========
+let arr = [1, 3, ['Hello', 'Wordd', [9, 6, 1]],
+    ['oops'], 9
+];
+
+let result = arr.flat(Infinity);
+console.log(result);
