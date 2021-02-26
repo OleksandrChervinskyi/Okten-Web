@@ -295,7 +295,9 @@ function createBlocksWithRulesInDOM(arr) {
 
 function getExactPower(N) {
     let result = Math.sqrt(N);
-    if (Number.isInteger(result)) {
+    if (N == 0 || N == 1) {
+        console.log('No');
+    } else if (Number.isInteger(result)) {
         if (result !== 2) {
             getExactPower(result);
         } else {
@@ -305,7 +307,11 @@ function getExactPower(N) {
         console.log('No');
     }
 }
-// getExactPower(256);
+// getExactPower(0);
+// getExactPower(1);
+// getExactPower(16);
+// getExactPower(16.33);
+
 
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
