@@ -82,52 +82,145 @@ twoFormBt.addEventListener('click', function() {
 // Перший аргумент визначає кількість строк.
 // Другий параметр визначає кліькіть ячеєк в кожній строці.
 // Третій параметр визначає елемент в який потрібно таблицю додати.
+// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+// При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// (Додатковачастина для завдання)
 let place = document.getElementById('place_for_table');
 
-function createTable(numberOfLine, numberCellInLine, fatherElement) {
+// Створюю інпути та кнопку
+let input1 = document.createElement('input');
+input1.type = 'number';
+place.appendChild(input1);
+
+let input2 = document.createElement('input');
+input2.type = 'number';
+place.appendChild(input2);
+
+let input3 = document.createElement('input');
+input3.type = 'text';
+place.appendChild(input3);
+
+let btInput = document.createElement('button');
+btInput.innerText = 'Press for colection information'
+place.appendChild(btInput);
+
+// Привязую подію виклику функції createTable при натисканні з даними з інпутів
+
+btInput.addEventListener('click', function() {
+    // Спочатку перевіряю чи вже існує така таблиця, якщо так - видаляю стару та створюю нову
+    let checkTable = document.getElementById('table_place');
+    if (!checkTable) {
+        createTable(input1.value, input2.value, place, input3.value);
+        input1.value = null;
+        input2.value = null;
+        input3.value = '';
+
+    } else {
+        checkTable.remove();
+        createTable(input1.value, input2.value, place, input3.value);
+        input1.value = null;
+        input2.value = null;
+        input3.value = '';
+    }
+})
+
+// Функція створення таблиці
+function createTable(numberOfLine, numberCellInLine, fatherElement, innerText) {
     let table = document.createElement('table');
+    table.id = 'table_place';
     for (let i = 0; i < numberOfLine; i++) {
         let tr = document.createElement('tr');
         for (let n = 0; n < numberCellInLine; n++) {
             let td = document.createElement('td');
             td.style.border = '1px solid green';
-            td.innerText = 'Text text';
+            td.innerText = innerText;
             tr.appendChild(td);
         }
 
         table.appendChild(tr);
     }
-
     fatherElement.appendChild(table);
 }
-// createTable(4, 6, place);
-
-
-// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
-function createInputs(numberOfLine, countOfCell, textIntoInputs) {
-    let input
-}
-
-// При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
-// (Додатковачастина для завдання)
-
+//============================================
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+// let caruselWrap = document.getElementById('carusel');
 
+// // Архів картинок
+// let pictures = [
+//     { id: 1, name: 'photo1', url: '1.jpeg' },
+//     { id: 2, name: 'photo2', url: '2.jpeg' },
+//     { id: 3, name: 'photo3', url: '3.jpeg' },
+//     { id: 4, name: 'photo4', url: '3.jpeg' },
+//     { id: 5, name: 'photo5', url: '3.jpeg' },
+
+
+// ];
+
+// // Створюю кнопки
+// let btLeft = document.createElement('button');
+// btLeft.innerText = 'previous';
+// caruselWrap.appendChild(btLeft);
+
+
+
+// // Створюю картинки
+
+// let img = document.createElement('img');
+// img.src = pictures[index].url;
+// img.classList = 'pictures';
+// img.style.width = '200px';
+// img.style.height = '200px';
+// img.style.marginRight = '20px'
+// if (i < 3) {
+//     caruselWrap.appendChild(img);
+// } else {
+//     caruselWrap.appendChild(img);
+//     img.style.display = 'none';
+// }
+// // Onclick
+// btLeft.addEventListener('click', function() {
+//     img.src = pictures[i - 1].url;
+// })
+// btRight.addEventListener('click', function() {
+//     img.src = pictures[i + 1].url;
+// })
+
+// //  
+// let btRight = document.createElement('button');
+// btRight.innerText = 'next';
+// caruselWrap.appendChild(btRight);
+//================================================
 
 // - Сворити масив не цензцрних слів.
 // Сворити інпут текстового типу.
 // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
-
-
 // - Сворити масив не цензцрних слів.
 // Сворити інпут текстового типу.
 // Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 // Кинути алерт з попередженням у випадку якщо містить.
 // Перевірку робити при натисканні на кнопку
+let matArr = ['blat', 'syka'];
 
+let swearsWrap = document.getElementById('swears');
+let inp = document.createElement('input');
+inp.type = 'text';
 
+let matBt = document.createElement('button');
+matBt.innerText = 'Check your text?'
+
+matBt.onclick = function() {
+    matArr.forEach(value => {
+        if (inp.value.includes(value)) {
+            alert('warning! warning!')
+        }
+    })
+}
+
+swearsWrap.appendChild(inp);
+swearsWrap.appendChild(matBt);
+//===================================
 
 // -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
 // При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
