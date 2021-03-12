@@ -17,7 +17,7 @@ buttonHidenHimself.onclick = function() {
 let btConfirm = document.getElementById('bt_confirm');
 btConfirm.onclick = function() {
     let ageInput = document.getElementById('age_input');
-    if (+ageInput.value > 18) {
+    if (+ageInput.value >= 18) {
         alert('Your age correctly')
     } else if (ageInput.value == '') {
         alert('Enter your age!');
@@ -143,52 +143,61 @@ function createTable(numberOfLine, numberCellInLine, fatherElement, innerText) {
 }
 //============================================
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-// let caruselWrap = document.getElementById('carusel');
+let caruselWrap = document.getElementById('carusel');
 
-// // Архів картинок
-// let pictures = [
-//     { id: 1, name: 'photo1', url: '1.jpeg' },
-//     { id: 2, name: 'photo2', url: '2.jpeg' },
-//     { id: 3, name: 'photo3', url: '3.jpeg' },
-//     { id: 4, name: 'photo4', url: '3.jpeg' },
-//     { id: 5, name: 'photo5', url: '3.jpeg' },
-
-
-// ];
-
-// // Створюю кнопки
-// let btLeft = document.createElement('button');
-// btLeft.innerText = 'previous';
-// caruselWrap.appendChild(btLeft);
+// Архів картинок
+let pictures = [
+    { id: 1, name: 'photo1', url: '1.jpeg' },
+    { id: 2, name: 'photo2', url: '2.jpeg' },
+    { id: 3, name: 'photo3', url: '3.jpeg' },
+    // { id: 4, name: 'photo4', url: '3.jpeg' },
+    // { id: 5, name: 'photo5', url: '3.jpeg' },
 
 
+];
 
-// // Створюю картинки
+// Створюю кнопки
+let btLeft = document.createElement('button');
+btLeft.innerText = 'previous';
+caruselWrap.appendChild(btLeft);
 
-// let img = document.createElement('img');
-// img.src = pictures[index].url;
-// img.classList = 'pictures';
-// img.style.width = '200px';
-// img.style.height = '200px';
-// img.style.marginRight = '20px'
-// if (i < 3) {
-//     caruselWrap.appendChild(img);
-// } else {
-//     caruselWrap.appendChild(img);
-//     img.style.display = 'none';
-// }
-// // Onclick
-// btLeft.addEventListener('click', function() {
-//     img.src = pictures[i - 1].url;
-// })
-// btRight.addEventListener('click', function() {
-//     img.src = pictures[i + 1].url;
-// })
+let btRight = document.createElement('button');
+btRight.innerText = 'next';
+caruselWrap.appendChild(btRight);
 
-// //  
-// let btRight = document.createElement('button');
-// btRight.innerText = 'next';
-// caruselWrap.appendChild(btRight);
+// Створюю картинки
+let index = 0;
+let img = document.createElement('img');
+img.src = pictures[index].url;
+img.classList = 'pictures';
+img.style.width = '200px';
+img.style.height = '200px';
+img.style.marginRight = '20px';
+
+caruselWrap.appendChild(img);
+
+
+
+// Onclick Button Next
+btRight.onclick = () => {
+    if (index < pictures.length - 1) {
+        index++;
+    } else {
+        index = 0;
+    }
+    img.src = pictures[index].url;
+};
+
+// Onclick Button Back
+btLeft.onclick = () => {
+    if (index > 0) {
+        index--;
+    } else {
+        index = pictures.length - 1;
+    }
+    img.src = pictures[index].url;
+};
+
 //================================================
 
 // - Сворити масив не цензцрних слів.
@@ -221,36 +230,3 @@ matBt.onclick = function() {
 swearsWrap.appendChild(inp);
 swearsWrap.appendChild(matBt);
 //===================================
-
-// -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
-// При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
-
-// -- взять массив пользователей
-// let usersWithAddress = [
-//                 {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//                 {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-//                 {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-//                 {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-//                 {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-//                 {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-//                 {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-//                 {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-//                 {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-//                 {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//                 {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-//             ];
-// Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
-// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
-// 2й - оставляет старше 29 лет включительно
-// 3й - оставляет тех у кого город киев
-// Данные выводить в документ
-
-
-
-// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
-// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
-// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
-// Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
-
-
-// *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
