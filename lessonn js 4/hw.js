@@ -118,11 +118,12 @@ function replace(arr, i) {
     if (i > arr.length - 1) {
         console.log('Not posible index');
     } else {
-        arr[i] = arr[i] + 1;
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
     }
+
     console.log(arr);
 }
-// replace(ar, 6)
+// replace(ar, 4);
 
 
 // - *** створити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
@@ -315,16 +316,21 @@ function getExactPower(N) {
 
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
+
+
 function deepCopy(obj) {
     for (const key in obj) {
         if (typeof(obj[key]) === 'object') {
             deepCopy(obj[key]);
         } else {
-            console.log(key, obj[key]);
+            let result = (key, obj[key]);
+            // console.log(key, obj[key]);
+            console.log(result);
+
         }
     }
 }
-// deepCopy({ name: 'Alex', age: 25, wife: { name: 'Tanya', age: 24, sun: { nameSun: 'Svetozar', hobby: 'violonchel' } } });
+deepCopy({ name: 'Alex', age: 25, wife: { name: 'Tanya', age: 24, sun: { nameSun: 'Svetozar', hobby: 'violonchel' } } });
 
 // 3) Flat
 // Вирівняти багаторівневий масив в однорівневий
