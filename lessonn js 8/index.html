@@ -11,51 +11,86 @@
 </head>
 
 <body>
+
     <textarea name="textarea" id="text" cols="40" rows="15">
 
-    </textarea>
+        </textarea>
+
 
     <div class="second_task" style="border: 1px solid black;">
-        <textarea id="textarea" cols="30" rows="10"></textarea>
+        <form id="myform" oninput="saveInfo(this)">
 
-        <input type="text">
-        <input type="text">
-        <input type="text">
+            <textarea id="textarea" cols="30" rows="10"></textarea>
+
+            <input type="text">
+            <input type="text">
+            <input type="text">
 
 
-        <input type="checkbox" name="" id="">
-        <input type="checkbox" name="" id="">
-        <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="">
 
-        <input type="radio" name="radio" id="">
-        <input type="radio" name="radio" id="">
-        <input type="radio" name="radio" id="">
+            <input type="radio" name="radio" id="">
+            <input type="radio" name="radio" id="">
+            <input type="radio" name="radio" id="">
 
-        <select name="" id="">
-            <option value="enter hero">
-                Mario
-            </option>
-            <option value="enter hero">
-                Luigi
-            </option>
-            <option value="enter hero">
-                Dragon  
-            </option>
-        </select>
-        <select name="" id="">
-            <option value="enter heero">
-                1
-            </option>
-            <option value="enter heero">
-                2
-            </option>
-            <option value="enter heero">
-                3
-            </option>
-        </select>
+            <select name="" id="">
+                    <option value="enter hero">
+                        Mario
+                    </option>
+                    <option value="enter hero">
+                        Luigi
+                    </option>
+                    <option value="enter hero">
+                        Dragon  
+                    </option>
+                </select>
+            <select name="" id="">
+                    <option value="enter heero">
+                        1
+                    </option>
+                    <option value="enter heero">
+                        2
+                    </option>
+                    <option value="enter heero">
+                        3
+                    </option>
+            </select>
+
+        </form>
+    </div>
+
+    <div class="third" style="border: 1px solid red;">
+
+        <textarea name="name3" id="textarea3" cols="30" rows="10"></textarea>
+        <button id="savehistorybt">
+            Save in localStorage
+        </button>
+        <button id="history_next">Next</button>
+        <button id="history_previous">Previous</button>
+        <button id="btclear">Clear Storage</button>
+
 
     </div>
 
+    <div class="fourth" style="border: 1px solid green; display: flex;">
+        <form id="form4">
+            <input type="text" name="" id="name" placeholder="ФИО  *обов'язково">
+            <input type="number" name="" id="number" placeholder="номер">
+            <input type="text" name="" id="email" placeholder="почта">
+            <input type="text" name="" id="firm" placeholder="фирма">
+            <input type="text" name="" id="depart" placeholder="отдел">
+            <input type="date" name="" id="date" placeholder="день рождения">
+            <button id="save_contact" type="button">Save / resave contact</button>
+            <button id="edit_contact" type="button">Edit contact</button>
+            <button id="del_contact" type="button">Delete contact</button>
+            <button id="del_all">Delete all contacts</button>
+        </form>
+        <select name="contacts" id="contacts_list" style="display: inline-block;">
+                
+        </select>
+    </div>
 
 
     <!-- JS -->
