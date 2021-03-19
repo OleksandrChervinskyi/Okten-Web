@@ -273,16 +273,14 @@ let btDelAll = document.getElementById('del_all');
 
 let select = document.getElementById('contacts_list');
 
+
 // Show all saved contacts
 for (const key in localStorage) {
     if (localStorage.getItem(key) !== null) {
         let option = document.createElement('option');
-        if (JSON.parse(localStorage.getItem(key)).name === '') {
-            option.innerText = 'Contact without Name';
-        } else {
-            option.innerText = JSON.parse(localStorage.getItem(key)).name;
-        }
+        option.innerText = JSON.parse(localStorage.getItem(key)).name;
         select.appendChild(option);
+        console.log(typeof(localStorage.getItem(key)));
     }
 }
 
