@@ -74,7 +74,12 @@ document.body.appendChild(div);
 
 let twoFormBt = document.getElementById('two_form_bt');
 twoFormBt.addEventListener('click', function() {
-    console.log(document.forms);
+    let f = document.forms;
+    for (const i of f) {
+        for (const n of i) {
+            console.log('input value - ' + n.value);
+        }
+    }
 })
 
 
