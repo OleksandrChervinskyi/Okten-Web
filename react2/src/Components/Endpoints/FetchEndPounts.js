@@ -11,12 +11,7 @@ export const Fetch = (props) => {
         setData(newData)
     }
 
-    useEffect(() => {
-        giveData()
-        return () => {
-
-        }
-    }, [])
+    
 
     console.log(data);
 

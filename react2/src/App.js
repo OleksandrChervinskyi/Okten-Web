@@ -1,14 +1,18 @@
 import './App.css';
 import React, { useState } from 'react';
-import { useRef } from 'react';
+import { useEffect } from 'react';
 
-const Posts = () => {
+const Posts = ({carentValeu}, {data}) => {
+  console.log(carentValeu);
+  console.log(data);
+  const localData = data[carentValeu]
 
   return (
-    <>
-    <div>kl</div>
-    </>
+    <div>
+      {localData.map(el => el.id)}
+    </div>
   )
+
 }
 
 function App() {
@@ -22,7 +26,7 @@ function App() {
 
 
   //      Деструктуризація
-  // const { target: {
+  // const {target: {
   //   elements: {
   //     nameInp,
   //     ageInp,
@@ -31,7 +35,7 @@ function App() {
 
   //        JSON Обєкта упорядкований
   // const saveInJSON = JSON.stringify(
-  //   { inpName: nameInp.value, inpAge: ageInp.value }, null, 2
+  //   {inpName: nameInp.value, inpAge: ageInp.value }, null, 2
   // )
   // alert(saveInJSON)
   //}
@@ -68,20 +72,76 @@ function App() {
   // const [itext, setIText] = useState('')
   // const [itext, setIText] = useState('')
 
+  // Costans
+  const POSTS = 'posts'
+  const COMMENTS = 'comments'
+  const ALBUMS = 'albums'
+  const PHOTOS = 'photos'
+  const TODOS = 'todos'
+  const USERS = 'users'
+
+  // Big Data
+  const [bigData, setBigData] = useState({
+    [POSTS]: [],
+    [COMMENTS]: [],
+    [ALBUMS]: [],
+    [PHOTOS]: [],
+    [TODOS]: [],
+    [USERS]: [],
+  })
+
+  // Function for render endpoints
+  const getPosts = () => {
+
+  }
+
+  // State
   const [inputs, setInputs] = useState({
     iText: '',
     iText2: '',
   })
 
- 
-  const saveFn = () => {
-    const data = JSON.stringify(inputs, null, 2)
-    alert(data)
+  // URL for jsonplaceholder
+  const getUrl = (objFromInputs) => {
+    const url = 'https://jsonplaceholder.typicode.com/'
+    if (objFromInputs.iText2 !== '') {
+      const newUrl = url + objFromInputs.iText + '/' + objFromInputs.iText2
+      return newUrl
+
+    } else {
+      const newUrl = url + objFromInputs.iText
+      return newUrl
+    }
   }
 
-  const changeSets = (nameInputs, valueOfInputs) => {
-    setInputs({...inputs, [nameInputs] : valueOfInputs})
+  // Get End Point
+  const getEndPoints = async (inputsValue) => {
+    const endpoint = await fetch(getUrl(inputsValue))
+    if (endpoint.ok === true) {
+      const response = await endpoint.json()
+      setBigData({ ...bigData, [inputsValue.iText]: response })
+
+    } else {
+      alert("Ошибка HTTP: " + endpoint.status)
+    }
   }
+
+  // Click on Button
+  const saveFn = () => {
+    const data = JSON.stringify(inputs, null, 2)
+    getEndPoints(JSON.parse(data))
+    console.log(inputs);
+  }
+
+  // Controled inputs
+  const changeSets = (nameInputs, valueOfInputs) => {
+    setInputs({ ...inputs, [nameInputs]: valueOfInputs })
+  }
+
+  // UseEffect
+  useEffect(() => {
+
+  })
 
   return (
     <div className='App'>
@@ -106,10 +166,12 @@ function App() {
         type="text" name="inpText" placeholder="endPoint ex. 'posts'" />
 
       <input value={inputs.iText2}
-        onChange={({ target: { value } }) => changeSets('iText2',value)}
+        onChange={({ target: { value } }) => changeSets('iText2', value)}
         type="text" name="inpText" placeholder="number" />
 
       <button onClick={saveFn}>Show</button>
+
+        {inputs.iText === POSTS && <Posts carentValeu={inputs.iText} data={bigData}/>}
 
 
     </div>
