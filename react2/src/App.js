@@ -159,7 +159,7 @@ function App() {
         <button type="submit">Save</button>
       </form> */}
 
-      {/* Uncontroled Inputs */}
+      {/* Uncontroled Inputs */} 
 
       <input value={inputs.iText}
         onChange={({ target: { value } }) => changeSets('iText', value)}
@@ -177,6 +177,8 @@ function App() {
     </div>
   )
 }
+
+// ------------------HW v2----------------
 
 
 export default App;
