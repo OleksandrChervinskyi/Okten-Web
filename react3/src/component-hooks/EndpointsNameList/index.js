@@ -1,0 +1,1 @@
+export const EndpointsNameList = ['posts', 'users', 'todos', 'albums', 'comments', 'photos']

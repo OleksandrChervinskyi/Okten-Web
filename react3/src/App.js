@@ -1,12 +1,19 @@
 import './App.css';
-import { Counter1 } from './components-redux/Counters/Counter1'
-import { Counter2 } from './components-redux/Counters/Counter2'
+import { Inputs } from './component-hooks/inputs';
+import { useSelector } from 'react-redux';
+import { Posts } from './component-hooks/Endpoints/Posts';
+
 
 function App() {
+
+  const inputsValue = useSelector(({ lot1: { inputsValue } }) => (inputsValue))
+
+
   return (
     <>
-      <Counter1 />
-      <Counter2 />
+      <Inputs />
+      <hr />
+      <Posts />
     </>
   )
 }
