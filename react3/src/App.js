@@ -15,12 +15,15 @@ import {
   USERS,
   PHOTOS
 } from './component-hooks/redux/action-types'
+import {Counter} from './component-hooks/Counter'
 
 
 function App() {
 
   // imputs value
   const inputsValue = useSelector(({ lot1: { inputsValue } }) => (inputsValue))
+  
+  
 
   return (
     <>
@@ -32,7 +35,8 @@ function App() {
       {inputsValue[0] === COMMENTS && <Comments />}
       {inputsValue[0] === USERS && <Users />}
       {inputsValue[0] === PHOTOS && <Photos />}
-
+      
+      <Counter/>
     </>
   )
 }

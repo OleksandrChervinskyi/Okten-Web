@@ -1,6 +1,10 @@
 import { EndpointsNameList } from '../EndpointsNameList'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import {
+    addToStore,
+    saveInputsValue,
+} from '../redux/action-create'
 
 
 export const GetEndpointBt = ({ endpoint, idEndpoint }) => {
@@ -11,18 +15,21 @@ export const GetEndpointBt = ({ endpoint, idEndpoint }) => {
     const [downloadIcon, setdownloadIcon] = useState(false)
 
     const endpointFetch = async () => {
+        //Wrong address
         if (!EndpointsNameList.includes(endpoint.toLowerCase())) {
             console.error(`Неможливо перейти за адресою typicode.com/${endpoint}/${idEndpoint}`)
             return
         }
+
+        //Fetch
         setdownloadIcon(true)
         const resp = await fetch(`https://jsonplaceholder.typicode.com/${endpoint}/${idEndpoint}`)
         const json = await resp.json()
         setdownloadIcon(false)
 
         // add to store
-        dispatch({ type: 'ADDTOSTORE', payload: json })
-        dispatch({ type: 'SAVEINPUTSVALEU', payload: endpoint })
+        dispatch(addToStore(json))
+        dispatch(saveInputsValue(endpoint))
     }
 
 

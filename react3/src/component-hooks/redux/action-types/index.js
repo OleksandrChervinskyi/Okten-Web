@@ -5,6 +5,13 @@ const COMMENTS = 'comments';
 const USERS = 'users';
 const PHOTOS = 'photos';
 
+const INC = 'INC';
+const DEC = 'DEC';
+const RESET = 'RESET';
+
+const ADDTOSTORE = 'ADDTOSTORE';
+const SAVEINPUTSVALEU = 'SAVEINPUTSVALEU';
+
 export {
     POSTS,
     ALBUMS,
@@ -12,4 +19,9 @@ export {
     COMMENTS,
     USERS,
     PHOTOS,
+    INC,
+    DEC,
+    RESET,
+    ADDTOSTORE,
+    SAVEINPUTSVALEU,
 }
